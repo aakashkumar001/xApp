@@ -18,14 +18,14 @@ const links = [
   { name: "Home", href: "/dashboard", icon: Home },
   {
     name: "Search",
-    href: "/dashboard/search",
+    href: "/search",
     icon: Search,
     hideOnMobile: true,
   },
-  { name: "Explore", href: "/dashboard/explore", icon: Compass },
+  { name: "Explore", href: "/explore", icon: Compass },
   {
     name: "Reels",
-    href: "/dashboard/reels",
+    href: "/Reels",
     icon: Clapperboard,
   },
   {
@@ -40,8 +40,8 @@ const links = [
     hideOnMobile: true,
   },
   {
-    name: "Create",
-    href: "/dashboard/create",
+    name: "Create Reel",
+    href: "/create-reel",
     icon: PlusSquare,
   },
 ];

@@ -1,33 +1,41 @@
-import {redirect} from "next/navigation";
+import Post from "@/components/Post";
+import SideNav from "@/components/SideNav";
+import SuggestedBar from "@/components/SuggestedBar";
+import image1 from "../public/images/image1.jpg"
+import image2 from "../public/images/image2.jpg"
+import image3 from "../public/images/image3.jpg"
+import image4 from "../public/images/image4.jpg"
 
-import { PostsSkeleton } from "@/components/Skeletons";
-import { Suspense } from "react";
 
-function Home() {
+export default function () {
   return (
-    <main className="flex w-full flex-grow">
-      <div className="flex flex-col flex-1 gap-y-8 max-w-lg mx-auto pb-20">
-        <Suspense fallback={<PostsSkeleton />}>
+    <>
+      <div className="w-full h-full flex gap-2 ">
+        <div className="flex-none lg:w-64 h-full border-r-2 border-r-gray-200 lg:fixed">
+          <SideNav />
+        </div>
+        <div className="grow h-full border-r-2 border-r-gray-200 lg:ml-64 p-6">
+          <div className="m-4">
+          <div>
+          <Post imagess={image1}/>
+          </div>
+          <div>
+          <Post imagess={image2}/>
+          </div>
+          <div>
+          <Post imagess={image3}/>
+          </div>
+         <div>
+         <Post imagess={image4}/>
+         </div>
+          </div>
          
-        </Suspense>
+          
+        </div>
+        <div className="flex-none h-full lg:w-64">
+          <SuggestedBar />
+        </div>
       </div>
-    </main>
+    </>
   );
 }
-
-export default Home;
-
-// export default function Home() {
-
-
-//   return (
-//       <div className="ml-64 bg-zinc-600 h-screen flex">
-//        <div className="w-580px">
-//    hello
-//        </div>
-//        <div>
-// nextjs
-//        </div>
-//       </div>
-//     )
-// }

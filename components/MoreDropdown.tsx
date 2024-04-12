@@ -92,7 +92,7 @@ function MoreDropdown() {
               <p>Switch appearance</p>
             </DropdownMenuItem>
 
-            <DropdownMenuItem className="menuItem" >
+            <DropdownMenuItem className="menuItem">
               <LogOut size={20} />
               <p>Log out</p>
             </DropdownMenuItem>
