@@ -4,6 +4,7 @@ export const appwriteConfig = {
     url:String(process.env.NEXT_PUBLIC_APPWRITE_URL),
     projectId:String(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID),
     databaseId:String(process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID),
+    storageId:String(process.env.NEXT_PUBLIC_APPWRITE_STORAGE_ID),
     userCollectionId:String(process.env.NEXT_PUBLIC_APPWRITE_USER_COLLECTION_ID),
     postCollectionId:String(process.env.NEXT_PUBLIC_APPWRITE_POST_COLLECTION_ID),
     savesCollectionId:String(process.env.NEXT_PUBLIC_APPWRITE_SAVES_COLLECTION_ID),
