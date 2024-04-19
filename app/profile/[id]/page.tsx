@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Image3 from "../../public/images/image3.jpg"
+import Image3 from "../../../public/images/image3.jpg"
 
 export default function () {
 
