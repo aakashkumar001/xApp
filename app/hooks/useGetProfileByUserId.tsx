@@ -6,11 +6,11 @@ const useGetProfileByUserId = async (userId:string) => {
     const response = await databases.listDocuments(
       appwriteConfig.databaseId,
      appwriteConfig.userCollectionId,
-      [Query.equal("accountId", userId)]
+      [Query.equal("accountId", String(userId))]
     );
-
-    const documents : any = await response.documents;
-console.log(documents[0])
+console.log(response)
+    const documents = response.documents;
+console.log(documents)
     return {
       id: documents[0]?.$id,
       accountId: documents[0]?.accountId,

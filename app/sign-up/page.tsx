@@ -81,7 +81,8 @@ export default function () {
       if (isLoggedIn) {
         form.reset();
 
-        router.push('/sign-in');
+        router.push("/")
+
       } else {
         alert("login failed");
         return;

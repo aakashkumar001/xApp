@@ -77,7 +77,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       cookieFallback === null ||
       cookieFallback === undefined
     ) {
-      router.push("/sign-in");
+      router.push("/sign-up");
     }
 
     checkAuthUser();

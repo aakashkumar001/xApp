@@ -49,20 +49,6 @@ export default function ({ post }: PostFormProps) {
   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
     console.log("values");
     console.log("values" + value);
-    // Action = Update
-    // if (post && action === "Update") {
-    //   const updatedPost = await updatePost({
-    //     ...value,
-    //     postId: post.$id,
-    //     imageId: post.imageId,
-    //     imageUrl: post.imageUrl,
-    //   });
-
-    //   if (!updatedPost) {
-    //     alert(`${action} post failed! Please try again`);
-    //   }
-    //   return router.push("/");
-    // }
 
     //Action = Create
     const newPost = await createPost({

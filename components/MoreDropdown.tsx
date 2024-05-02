@@ -22,6 +22,9 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Switch } from "./ui/switch";
+import { useSignOutAccount } from "@/lib/react-query/queries";
+import { useUserContext } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 function MoreDropdown() {
   const [showModeToggle, setShowModeToggle] = useState(false);
@@ -29,7 +32,16 @@ function MoreDropdown() {
   const ref = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
 
+  const { user } = useUserContext();
+  const router = useRouter();
+  const { mutate: signOut, isSuccess } = useSignOutAccount();
+
+   const signUpOut = () => {
+         signOut();
+   }
+  
   useEffect(() => {
+    if(isSuccess) router.push("/")
     // Close the dropdown when the user clicks outside
     function handleOutsideClick(event: MouseEvent) {
       if (!event.target) return;
@@ -91,11 +103,12 @@ function MoreDropdown() {
               <Moon size={20} />
               <p>Switch appearance</p>
             </DropdownMenuItem>
-
-            <DropdownMenuItem className="menuItem">
-              <LogOut size={20} />
-              <p>Log out</p>
-            </DropdownMenuItem>
+            { user ? (
+              <DropdownMenuItem onClick={() => signOut()} className="menuItem">
+                <LogOut size={20} />
+                <p>Log out</p>
+              </DropdownMenuItem>
+            ) : "Sign In"}
           </>
         )}
 

@@ -9,12 +9,14 @@ import image3 from "../public/images/image3.jpg"
 import image4 from "../public/images/image4.jpg"
 import PostsComp from "@/components/PostsComp";
 import Saved from "@/components/Saved";
+import { useUserContext } from "@/context/AuthContext";
 
 
 
 
 
 export default function () {
+
 
 
   // const {data:posts, isLoading:isPostLoading,isError:isErrorPosts} = useGetRecentPosts();

@@ -7,8 +7,6 @@ import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
 // AUTH
 // ============================================================
 
-console.log("Id and query"+ID+Query)
-
 // ============================== SIGN UP
 export async function createUserAccount(user: INewUser) {
   try {
