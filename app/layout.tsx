@@ -5,7 +5,10 @@ import { Providers } from "./providers/providers";
 import { AuthProvider } from "../context/AuthContext";
 import { QueryProvider } from "@/lib/react-query/QueryProvider";
 
+
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "Network",

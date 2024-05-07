@@ -10,6 +10,7 @@ const useGetPostById = async (id: string) => {
             id
         );
 
+
         const profile = await useGetProfileByuserId(post?.accountId)
 
         return {

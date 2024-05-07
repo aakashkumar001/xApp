@@ -18,7 +18,7 @@ const useGetCommentsByPostId = async (postId:string) => {
         return {
             id:comment?.$id,
             accountId:comment?.accountId,
-            reel_id:comment?.text,
+            text:comment?.text,
             created_at:comment?.created_at,
             profile:{
                 accountId:profile?.accountId,

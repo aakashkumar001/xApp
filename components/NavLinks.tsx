@@ -40,7 +40,7 @@ const links = [
     hideOnMobile: true,
   },
   {
-    name: "Create Reel",
+    name: "Create",
     href: "/create-reel",
     icon: PlusSquare,
   },
@@ -65,7 +65,7 @@ function NavLinks() {
               size: "lg",
             })}
           >
-            <LinkIcon className="w-6" />
+            <LinkIcon className="w-6"/>
             <p
               className={`${cn("hidden lg:block", {
                 "font-extrabold": isActive,

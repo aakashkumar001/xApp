@@ -21,7 +21,7 @@ export const usePostStore = create<any>()(
         },
         setPostsById: async (postId: string) => {
           const result = await useGetPostById(postId);
-          set({ postByid: result });
+          set({ postById: result });
         },
       }),
       {

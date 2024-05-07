@@ -17,7 +17,6 @@ export default function () {
     setAllPosts();
   },[])
 
-  console.log("allPosts"+ JSON.stringify(allPosts))
 
   return (
     <>

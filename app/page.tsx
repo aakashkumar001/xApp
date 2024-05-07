@@ -7,7 +7,6 @@ import image1 from "../public/images/image1.jpg"
 import image2 from "../public/images/image2.jpg"
 import image3 from "../public/images/image3.jpg"
 import image4 from "../public/images/image4.jpg"
-import PostsComp from "@/components/PostsComp";
 import Saved from "@/components/Saved";
 import { useUserContext } from "@/context/AuthContext";
 
@@ -35,18 +34,8 @@ export default function () {
         <div className="grow h-full border-r-2 border-r-gray-200 lg:ml-64 p-6">
           <div className="m-4">
           <div>
-          <Post imagess={image1}/>
+          <Post />
           </div>
-          <div>
-          <Post imagess={image2}/>
-          </div>
-          <div>
-          <Post imagess={image3}/>
-          </div>
-         <div>
-        <PostsComp/>
-        <Saved/>
-         </div>
           </div>
          
           

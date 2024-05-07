@@ -9,9 +9,9 @@ const useGetAllPosts = async () => {
         const response = await databases.listDocuments(appwriteConfig.databaseId, String(process.env.NEXT_PUBLIC_COLLECTION_ID_POST), [Query.orderDesc("$id")])
 
         const documents = response.documents;
+        console.log(documents)
 
         const objPromises = documents.map(async doc => {
-            console.log(doc.accountId)
             let profile = await useGetProfileByUserId(doc.accountId);
 
             return {
@@ -24,6 +24,8 @@ const useGetAllPosts = async () => {
                     accountId:profile?.accountId,
                     name:profile?.name,
                     image:profile?.image,
+                    bio:profile?.bio,
+                    id:profile?.id
                 }
             }
         })

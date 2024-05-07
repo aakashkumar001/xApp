@@ -4,7 +4,7 @@ export default function () {
   return (
     <div className="px-6 py-4 hidden lg:block ">
       <div className="rounded-xl flex flex-col gap-5">
-        <h2 className="text text-black text-xl font-semibold">Who to follow</h2>
+        <h2 className="text text-xl font-semibold text-gray-500">Who to follow</h2>
           <div key={1} className="h-14">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png"/>
@@ -12,8 +12,8 @@ export default function () {
             </Avatar>
 
             <div className="flex flex-col">
-              <p className="text-black font-semibold text-sm">{"unknown"}</p>
-              <p className="text-neutral-600 text-sm">@{"unknown"}</p>
+              <p className="text-black text-sm">{"unknown"}</p>
+              <p className="text-gray-500 text-sm">@{"unknown"}</p>
             </div>
             <div key={2} className="h-14">
               <Avatar>

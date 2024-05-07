@@ -29,7 +29,6 @@ export async function createUserAccount(user: INewUser) {
       imageUrl: avatarUrl,
     });
 
-    console.log("new user:"+ newUser)
 
     return newUser;
   } catch (error) {
@@ -54,7 +53,6 @@ export async function saveUserToDB(user: {
       user
     );
 
-    console.log("new User:" + newUser)
 
     return newUser;
   } catch (error) {
@@ -67,7 +65,6 @@ export async function signInAccount(user: { email: string; password: string }) {
   try {
     const session = await account.createEmailSession(user.email, user.password);
 
-    console.log("session"+ session)
 
     return session;
   } catch (error) {
@@ -80,7 +77,6 @@ export async function getAccount() {
   try {
     const currentAccount = await account.get();
 
-    console.log("currentAccount"+ currentAccount)
 
     return currentAccount;
   } catch (error) {
@@ -93,7 +89,6 @@ export async function getCurrentUser() {
   try {
     const currentAccount = await getAccount();
 
-    console.log("currentAccount:"+ currentAccount)
 
     if (!currentAccount) throw Error;
 
@@ -105,7 +100,6 @@ export async function getCurrentUser() {
 
     if (!currentUser) throw Error;
 
-    console.log("currentuser docs"+ currentUser)
 
     return currentUser.documents[0];
   } catch (error) {
@@ -119,7 +113,6 @@ export async function signOutAccount() {
   try {
     const session = await account.deleteSession("current");
 
-    console.log("sessionsout"+session)
 
     return session;
   } catch (error) {
@@ -137,14 +130,12 @@ export async function createPost(post: INewPost) {
     // Upload file to appwrite storage
     const uploadedFile = await uploadFile(post.file[0]);
 
-    console.log("uploadedfile"+uploadedFile)
 
     if (!uploadedFile) throw Error;
 
     // Get file url
     const fileUrl = getFilePreview(uploadedFile.$id);
 
-    console.log("fileurl"+fileUrl)
     if (!fileUrl) {
       await deleteFile(uploadedFile.$id);
       throw Error;
@@ -168,7 +159,6 @@ export async function createPost(post: INewPost) {
       }
     );
 
-    console.log("newpost"+newPost)
 
     if (!newPost) {
       await deleteFile(uploadedFile.$id);
@@ -189,7 +179,6 @@ export async function uploadFile(file: File) {
       ID.unique(),
       file
     );
-    console.log("uploadesfile"+uploadedFile)
     return uploadedFile;
   } catch (error) {
     console.log(error);
@@ -208,7 +197,6 @@ export function getFilePreview(fileId: string) {
       100
     );
 
-    console.log("filepreview"+fileUrl)
 
     if (!fileUrl) throw Error;
 
@@ -279,7 +267,6 @@ export async function getPostById(postId?: string) {
       postId
     );
 
-    console.log("post1"+post)
 
     if (!post) throw Error;
 
@@ -298,7 +285,6 @@ export async function updatePost(post: IUpdatePost) {
       imageUrl: post.imageUrl,
       imageId: post.imageId,
     };
-    console.log("images"+image)
     if (hasFileToUpdate) {
       // Upload new file to appwrite storage
       const uploadedFile = await uploadFile(post.file[0]);
@@ -307,7 +293,6 @@ export async function updatePost(post: IUpdatePost) {
       // Get new file url
       const fileUrl = getFilePreview(uploadedFile.$id);
 
-      console.log("fileurls"+fileUrl)
       if (!fileUrl) {
         await deleteFile(uploadedFile.$id);
         throw Error;
@@ -366,7 +351,6 @@ export async function deletePost(postId?: string, imageId?: string) {
       postId
     );
 
-    console.log("status codes"+statusCode)
 
     if (!statusCode) throw Error;
 
@@ -380,7 +364,6 @@ export async function deletePost(postId?: string, imageId?: string) {
 
 // ============================== LIKE / UNLIKE POST
 export async function likePost(postId: string, likesArray: string[]) {
-  console.log("post/likesarray"+postId+likesArray)
   try {
     const updatedPost = await databases.updateDocument(
       appwriteConfig.databaseId,
@@ -393,7 +376,6 @@ export async function likePost(postId: string, likesArray: string[]) {
 
     if (!updatedPost) throw Error;
 
-    console.log("updatedPost"+updatedPost)
 
     return updatedPost;
   } catch (error) {
@@ -423,6 +405,7 @@ export async function savePost(userId: string, postId: string) {
 }
 // ============================== DELETE SAVED POST
 export async function deleteSavedPost(savedRecordId: string) {
+  console.log(savedRecordId)
   try {
     const statusCode = await databases.deleteDocument(
       appwriteConfig.databaseId,
