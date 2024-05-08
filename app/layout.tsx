@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
 import { Providers } from "./providers/providers";
 import { AuthProvider } from "../context/AuthContext";
 import { QueryProvider } from "@/lib/react-query/QueryProvider";
@@ -23,6 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Providers>
        <QueryProvider>
         <AuthProvider>
@@ -30,6 +37,7 @@ export default function RootLayout({
         </AuthProvider>
         </QueryProvider>
         </Providers>
+        </ThemeProvider>
         </body>
     </html>
   );

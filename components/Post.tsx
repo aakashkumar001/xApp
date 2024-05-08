@@ -31,6 +31,8 @@ export default function Post() {
     isError: isCreatorError,
   } = useGetUsers();
 
+  console.log(creator)
+
   console.log(posts);
 
   return (

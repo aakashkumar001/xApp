@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, devtools, createJSONStorage } from 'zustand/middleware';
 import useGetProfileByUserId from '../hooks/useGetProfileByUserId';
+import useGetProfileByDocUserId from '../hooks/useGetProfileByDocUserId';
   
 interface ProfileStore {
     currentProfile: any | null;

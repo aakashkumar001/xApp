@@ -80,21 +80,22 @@ console.log(currentUser)
       <div className="flex justify-between px-2">
         <div className="flex gap-2 ml-3 mt-2">
           <Heart
-            fill={`${checkIsLiked(likes, userId) ? "red" : "fill"}`}
-            strokeWidth={0}
+            fill={`${checkIsLiked(likes, userId) ? "white" : "red"}`}
+            strokeWidth={`${checkIsLiked(likes, userId) ? 2: 0}`}
             size={28}
             className="cursor-pointer"
             onClick={(e) => handleLikePost(e)}
           />
 
-          <MessageCircle size={24} className="cursor-pointer" />
-          <Send size={26} className="cursor-pointer" />
+          <MessageCircle size={24} className="cursor-pointer" strokeWidth={2.5}/>
+          <Send size={26} className="cursor-pointer" strokeWidth={2}/>
         </div>
 
-        <div className="mr-12">
+        <div className="mr-12 mt-2">
           <Bookmark
             fill={`${isSaved ? "black" : "white"}`}
-            size={28}
+            size={26}
+            strokeWidth={`${isSaved ? 0: 2}`}
             className="cursor-pointer"
             onClick={(e) => handleSavePost(e)}
           />

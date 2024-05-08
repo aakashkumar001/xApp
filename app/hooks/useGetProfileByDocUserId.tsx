@@ -1,7 +1,7 @@
 import { appwriteConfig, databases } from "@/lib/appwrite/config";
 import { Query } from "appwrite";
 
-const useGetProfileByUserId = async (userId:string) => {
+const useGetProfileByDocUserId = async (userId:string) => {
   console.log(userId)
   try {
     let response = await databases.listDocuments(
@@ -24,4 +24,4 @@ const useGetProfileByUserId = async (userId:string) => {
   }
 };
 
-export default useGetProfileByUserId;
+export default useGetProfileByDocUserId;

@@ -49,11 +49,11 @@ const loopThroughPostsDown = () => {
     <>
       <div
         id="PostPage"
-        className="lg:flex justify-between w-full h-screen bg-black overflow-auto"
+        className="lg:flex justify-between w-full h-screen bg-black overflow-auto fixed top-0 left-0"
       >
         <div className="lg:w-[calc(100%-540px)] h-full relative">
           <Link
-            href={`/profile/`}
+            href={`/reels`}
             className="absolute text-white z-20 m-5 rounded-full bg-gray-700 p-1.5 hover:bg-gray-800"
           >
             <AiOutlineClose size="27" />
@@ -74,12 +74,6 @@ const loopThroughPostsDown = () => {
                             <BiChevronDown size="30" color="#FFFFFF"/>
                         </button>
                     </div>
-
-          <img
-            className="absolute z-20 top-[18px] left-[70px] rounded-full lg:mx-0 mx-auto"
-            width="45"
-            src="/images/tiktok-logo-small.png"
-          />
 
           {/* <video 
                                 className="fixed object-cover w-full my-auto z-[0] h-screen" 

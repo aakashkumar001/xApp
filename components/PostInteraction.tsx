@@ -59,7 +59,6 @@ export default function PostInteraction({ post }: any) {
     await useCreateLike(user.id || "", post?.post?.id);
     await getAllLikesByPost();
     hasUserLikedPost();
-    setHasClickedLike(false);
   };
 
   const unlike = async (id: string) => {
@@ -100,7 +99,8 @@ export default function PostInteraction({ post }: any) {
             >
               <Heart
                 size={26}
-                fill={likes?.length > 0 && userLiked ? `${"red"}` : ""}
+                fill={hasClickedLike || userLiked ? "red" : "white"}
+                strokeWidth={userLiked || hasClickedLike ? 0: 2}
               />
             </button>
             <span className="text-xs text-gray-500 font-semibold">

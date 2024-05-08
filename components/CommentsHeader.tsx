@@ -12,9 +12,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { AiFillHeart } from "react-icons/ai";
-import { BiLoaderCircle, BiSolidChat, BiSolidTrash } from "react-icons/bi";
+import { BiLoaderCircle, BiSolidChat,} from "react-icons/bi";
 import { ImMusic } from "react-icons/im";
 import useCreateBucketUrl from "@/app/hooks/useCreateBucketUrl";
+import { Trash } from "lucide-react";
 
 
 
@@ -144,7 +145,7 @@ export default function CommentsHeader ({post,params}:any) {
                             <BiLoaderCircle className="animate-spin" size="25"/>
                         ) : (
                             <button disabled={isDeleteing} onClick={() => deletePost()}>
-                                <BiSolidTrash className="cursor-pointer" size="25"/>
+                                <Trash className="cursor-pointer" size="25"/>
                             </button>
                         )}
                     </div>

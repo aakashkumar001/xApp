@@ -31,6 +31,7 @@ function MoreDropdown() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
+  console.log(theme)
 
   const { user } = useUserContext();
   const router = useRouter();
