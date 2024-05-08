@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
-export default function ({ params }: any) {
+export default function Reels ({ params }: any) {
 
     console.log(params)
   let { postById, setPostsById, postsByUser, setPostsByUser } = usePostStore();

@@ -41,7 +41,7 @@ const links = [
   },
   {
     name: "Create",
-    href: "/create-reel",
+    href: "/create/reel",
     icon: PlusSquare,
   },
 ];

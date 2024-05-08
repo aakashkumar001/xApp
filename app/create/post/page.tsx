@@ -34,8 +34,6 @@ export default function ({ post }: PostFormProps) {
     defaultValues: {
       caption: post ? post?.caption : "",
       file: [],
-      location: post ? post.location : "",
-      tags: post ? post.tags.join(",") : "",
     },
   });
 
@@ -47,7 +45,7 @@ export default function ({ post }: PostFormProps) {
 
   //Handler
   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
-    console.log("values");
+    alert("values");
     console.log("values" + value);
 
     //Action = Create
@@ -65,47 +63,70 @@ export default function ({ post }: PostFormProps) {
 
   return (
     <>
-       <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(handleSubmit)}
-        className="flex flex-col gap-9 w-full  max-w-5xl">
-        <FormField
-          control={form.control}
-          name="caption"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="shad-form_label">Caption</FormLabel>
-              <FormControl>
-                <Textarea
-                  className="shad-textarea custom-scrollbar"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage className="shad-form_message" />
-            </FormItem>
-          )}
-        />
+      <div>
+        <h1 className="text-[23px] font-semibold">Upload a Post</h1>
+        <h2 className="text-gray-400 mt-1">Post a media</h2>
+      </div>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(handleSubmit)}
+          className="flex w-full h-screen justify-center items-center gap-4"
+        >
+          <FormField
+            control={form.control}
+            name="file"
+            render={({ field }) => (
+              <FormItem className=" w-[640px] rounded-md h-96 object-contain">
+                <FormControl>
+                  <FileUploader
+                    fieldChange={field.onChange}
+                    mediaUrl={post?.imageUrl}
+                  />
+                </FormControl>
+                <FormMessage className="" />
+              </FormItem>
+            )}
+          />
 
-<FormField
-          control={form.control}
-          name="location"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="shad-form_label">Add Location</FormLabel>
-              <FormControl>
-                <Input type="text" className="shad-input" {...field} />
-              </FormControl>
-              <FormMessage className="shad-form_message" />
-            </FormItem>
-          )}
-        />
+      
+            <FormField
+              control={form.control}
+              name="caption"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-bold text-1xl font-bold text-gray-800">
+                    Caption
+                  </FormLabel>
+                  <FormControl>
+                    <Input className="" {...field} />
+                  </FormControl>
+                  <FormMessage className="" />
+                </FormItem>
+              )}
+            />
 
-        <FormField
+      
+              <Button
+                type="button"
+                className="bg-gradient-to-r hover:from-red-500 hover:to-red-600"
+                onClick={() => router.back()}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
+              >
+                create Post
+              </Button>
+    
+
+          {/* <FormField
           control={form.control}
           name="tags"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="shad-form_label">
+              <FormLabel className="">
                 Add Tags (separated by comma " , ")
               </FormLabel>
               <FormControl>
@@ -119,33 +140,7 @@ export default function ({ post }: PostFormProps) {
               <FormMessage className="shad-form_message" />
             </FormItem>
           )}
-        />
-
-          <FormField
-            control={form.control}
-            name="file"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="">Add Photos</FormLabel>
-                <FormControl>
-                  <FileUploader
-                    fieldChange={field.onChange}
-                    mediaUrl={post?.imageUrl}
-                  />
-                </FormControl>
-                <FormMessage className="" />
-              </FormItem>
-            )}
-          />
-
-          <div className="">
-            <Button type="button" className="" onClick={() => router.back()}>
-              Cancel
-            </Button>
-            <Button type="submit" className="">
-              create Post
-            </Button>
-          </div>
+        /> */}
         </form>
       </Form>
     </>
