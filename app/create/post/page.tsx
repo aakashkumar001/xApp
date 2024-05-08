@@ -20,11 +20,8 @@ import FileUploader from "@/components/shared/FileUploader";
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queries";
 import { Input } from "@/components/ui/input";
 
-type PostFormProps = {
-  post?: Models.Document;
-};
 
-export default function CreatePost ({ post }: PostFormProps) {
+export default function CreatePost ({ post }: any) {
   const router = useRouter();
   const { user } = useUserContext();
 
