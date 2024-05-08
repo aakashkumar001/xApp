@@ -6,7 +6,7 @@ import {  BookmarkIcon, Loader, LucideBookMarked } from "lucide-react";
 import GridPostList from "@/components/GridPostList";
 import { useGetCurrentUser } from "@/lib/react-query/queries";
 
-export default function () {
+export default function Saved() {
   const { data: currentUser } = useGetCurrentUser();
 
   // const savePosts = currentUser?.save

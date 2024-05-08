@@ -12,7 +12,7 @@ import { BiSearch } from "react-icons/bi";
 import { SearchResults } from "@/components/SearchResults";
 import GridPostList from "@/components/GridPostList";
 
-export default function () {
+export default function Explore () {
   const [searchValue, setSearchValue] = useState("");
 
   const { ref, inView } = useInView();

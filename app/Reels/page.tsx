@@ -10,7 +10,7 @@ import { usePostStore } from "../store/post";
 import { useEffect } from "react";
 import SingleReel from "@/components/SingleReel";
 
-export default function () {
+export default function Reels () {
   const {allPosts,setAllPosts} = usePostStore();
   
   useEffect( () => {

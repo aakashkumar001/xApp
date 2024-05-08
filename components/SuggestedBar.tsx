@@ -2,7 +2,7 @@
 import { useGetUsers } from "@/lib/react-query/queries";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
-export default function () {
+export default function SuggestedBar () {
 
   const {
     data: creator,

@@ -4,7 +4,7 @@ import GridPostList from "@/components/GridPostList";
 import { useGetCurrentUser } from "@/lib/react-query/queries";
 import { Loader } from "lucide-react";
 
-export default function () {
+export default function Liked () {
   const { data: currentUser } = useGetCurrentUser();
 
   if (!currentUser)

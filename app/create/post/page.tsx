@@ -24,7 +24,7 @@ type PostFormProps = {
   post?: Models.Document;
 };
 
-export default function ({ post }: PostFormProps) {
+export default function CreatePost ({ post }: PostFormProps) {
   const router = useRouter();
   const { user } = useUserContext();
 

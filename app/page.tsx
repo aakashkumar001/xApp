@@ -14,7 +14,7 @@ import { useUserContext } from "@/context/AuthContext";
 
 
 
-export default function () {
+export default function Home () {
 
 
 

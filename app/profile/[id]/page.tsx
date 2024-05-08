@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { BiSolidPencil } from "react-icons/bi";
 
 
-export default function ({params}:any) {
+export default function Profile ({params}:any) {
   const {user} = useUserContext();
   let { postsByUser, setPostsByUser } = usePostStore()
   let { setCurrentProfile, currentProfile } = useProfileStore()

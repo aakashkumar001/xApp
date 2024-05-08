@@ -34,7 +34,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/AuthContext";
 
-export default function () {
+export default function SignUp () {
   const router = useRouter();
 
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();

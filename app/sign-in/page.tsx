@@ -22,7 +22,7 @@ import Image from "next/image";
 import { DeviceFrameset } from "react-device-frameset";
 import "react-device-frameset/styles/marvel-devices.min.css";
 
-export default function () {
+export default function SignIn () {
   const router = useRouter();
 
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();

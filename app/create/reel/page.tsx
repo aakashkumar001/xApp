@@ -2,10 +2,7 @@
 
 import { BiLoaderCircle, BiSolidCloudUpload } from "react-icons/bi";
 import { AiOutlineCheckCircle } from "react-icons/ai";
-import { PiKnifeLight } from "react-icons/pi";
-import Registration from "@/components/LoginDialog";
 
-import { Button } from "@/components/ui/button";
 import { useUserContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +10,7 @@ import useCreatePost from "@/app/hooks/useCreatePost";
 import { Loader } from "lucide-react";
 import { Switch } from "@nextui-org/react";
 
-export default function () {
+export default function CreateReel () {
   const { user } = useUserContext();
   const router = useRouter();
 
@@ -24,8 +21,10 @@ export default function () {
   let [isUploading, setIsUploading] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!user) router.push("/");
-  }, [user]);
+    if (!user) {
+      router.push("/");
+    }
+  }, [user.id]);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
