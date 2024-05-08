@@ -1,13 +1,13 @@
 import { appwriteConfig, databases } from "@/lib/appwrite/config";
 import { Query } from "appwrite";
 
-const useGetProfileByUserId = async (userId:string) => {
+const useGetProfileByUserPost = async (userId:string) => {
   console.log(userId)
   try {
     const response = await databases.listDocuments(
       appwriteConfig.databaseId,
      appwriteConfig.userCollectionId,
-      [Query.equal("$id" , userId)]
+      [Query.equal("accountId" , userId)]
     );
 
     const documents = response.documents;
@@ -26,4 +26,4 @@ const useGetProfileByUserId = async (userId:string) => {
   }
 };
 
-export default useGetProfileByUserId;
+export default useGetProfileByUserPost;

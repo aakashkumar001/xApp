@@ -10,13 +10,17 @@ import { BiSolidPencil } from "react-icons/bi";
 
 
 export default function Profile ({params}:any) {
+    console.log(params)
   const {user} = useUserContext();
   let { postsByUser, setPostsByUser } = usePostStore()
-  let { setCurrentProfile, currentProfile } = useProfileStore()
+  let { setCurrentProfile, setCurrentProfileByPost, currentProfile,  } = useProfileStore()
+
+  console.log(currentProfile)
 
 
   useEffect(() => {
       setCurrentProfile(params?.id)
+      setCurrentProfileByPost(params?.id)
       setPostsByUser(params?.id)
   }, [])
 
